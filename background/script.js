@@ -4,7 +4,7 @@ var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
 var random = document.querySelector(".random");
 
-function pickRandomColor(e) {
+function randomColor(e) {
   color1.value = '#'+Math.floor(Math.random()*16777215).toString(16);
   color2.value = '#'+Math.floor(Math.random()*16777215).toString(16);
   setGradient();
@@ -20,7 +20,7 @@ function setGradient() {
 	css.textContent = body.style.background + ";";
 }
 
-window.onload = pickRandomColor;
+window.onload = randomColor;
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
-random.addEventListener("click", pickRandomColor);
+random.addEventListener("click", randomColor);
