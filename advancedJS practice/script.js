@@ -151,3 +151,68 @@
 // console.log(idTimes2)
 // //#8 change the output array of question #7 back into an object with all the users IDs updated to their new version. Should output: { user1: 36546, user2: 185666, user3: 180630 }
 // console.log(Object.fromEntries(idTimes2))
+
+// Advanced Loop
+
+// Question #1:
+// create a function called biggestNumberInArray() that takes
+// an array as a parameter and returns the biggest number.
+// biggestNumberInArray([-1,0,3,100, 99, 2, 99]) should return 100;
+// Use at least 3 different types of javascript loops to write this:
+// const array = [-1,0,3,100, 99, 2, 99] // should return 100
+// const array2 = ['a', 3, 4, 2] // should return 4
+// const array3 = [] // should return 0
+
+// function biggestNumberInArray(arr) {
+//  let compare = 0;
+//  arr.forEach(num => {
+//   if (arr.length !== 0) {
+//     if (typeof num === 'number' && num>compare) {
+//       compare = num;
+//     };
+//   };
+//  });
+//  console.log(compare);
+// }
+
+// function biggestNumberInArray2(arr) {
+//   let compare = 0;
+//   for (num of arr) {
+//     if (arr.length !== 0) {
+//       if (typeof num === 'number' && num>compare) {
+//         compare = num;
+//       };
+//     };
+//   };
+//   console.log(compare);
+// }
+
+// function biggestNumberInArray3(arr) {
+//   let compare = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     let num = arr[i];
+//     if (arr.length !== 0) {
+//       if (typeof num === 'number' && num>compare) {
+//         compare = num;
+//       };
+//     };
+//   };
+//   console.log(compare);
+// }
+
+// Question #2:
+// Write a function checkBasket() that lets you know if the item is in the basket or not
+const amazonBasket = {
+  glasses: 1,
+  books: 2,
+  floss: 100
+}
+
+function checkBasket(basket, lookingFor) {
+  for (item in amazonBasket){
+    if (item === lookingFor){
+      return `Yes! ${arguments[1]} is in the basket`
+    }
+  }
+  return `No! ${arguments[1]} is not in the basket`
+}
