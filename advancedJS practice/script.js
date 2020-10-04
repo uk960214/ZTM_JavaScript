@@ -202,17 +202,138 @@
 
 // Question #2:
 // Write a function checkBasket() that lets you know if the item is in the basket or not
-const amazonBasket = {
-  glasses: 1,
-  books: 2,
-  floss: 100
-}
+// const amazonBasket = {
+//   glasses: 1,
+//   books: 2,
+//   floss: 100
+// }
 
-function checkBasket(basket, lookingFor) {
-  for (item in amazonBasket){
-    if (item === lookingFor){
-      return `Yes! ${arguments[1]} is in the basket`
-    }
-  }
-  return `No! ${arguments[1]} is not in the basket`
-}
+// function checkBasket(basket, lookingFor) {
+//   for (item in amazonBasket){
+//     if (item === lookingFor){
+//       return `Yes! ${arguments[1]} is in the basket`
+//     }
+//   }
+//   return `No! ${arguments[1]} is not in the basket`
+// }
+
+//Question 1: Clean the room function: 
+//given an input of [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20], make a function that organizes these into individual array that is ordered. 
+//For example answer(ArrayFromAbove) should return: [[1,1,1,1],[2,2,2], 4,5,10,[20,20], 391, 392,591]. 
+
+// const array = [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20];
+// const bonusArray = [1, "2", "3", 2];
+
+// // seperate the number and string into different arrays
+// const separateNumberNString = arr => {
+//   const stringArray = []
+//   const numArray = []
+//   arr.forEach(element => {
+//     if (typeof element === "string"){
+//       stringArray.push(element);
+//     } else if (typeof element === "number") {
+//       numArray.push(element);
+//     } else if (typeof element === "object") {
+//       if (typeof element[0] === "string") {
+//         stringArray.push(element);
+//       } else if (typeof element[0] === "number") {
+//         numArray.push(element);
+//       } 
+//     } else {
+//       return 'Please check the elements in the Array'
+//     }
+//   });
+//   return [numArray, stringArray]
+// }
+
+// // sort array in ascending order and discard empty array
+// const sortArrays = (arr => {
+//   const compare = (a,b) => a - b;
+//   const sorted = [];
+//   arr.forEach(arr => {
+//     if (arr.len !== 0) {
+//       sorted.push(arr.sort(compare));
+//     }
+//   });
+//   return sorted
+// })
+
+// // create array consisting of same numbers
+// const createInnerArray = (num, len) => {
+//   const innerArray = [];
+//   for(let i = 0; i<len; i++){
+//     innerArray.push(num);
+//   };
+//   return innerArray
+// }
+
+// // bundle values that are same into arrays
+// const bundle = arr => {
+//   const bundled = [];
+//   let counter = 1;
+//   arr.forEach((num, i) => {
+//     let nextNum = arr[i+1];
+//     if (num === nextNum){
+//       counter++;
+//     } else if (num === arr[i-1]) {
+//       const innerArray = createInnerArray(num, counter);
+//       bundled.push(innerArray);
+//       counter = 1;
+//     } else {
+//       bundled.push(num);
+//     };
+//   });
+//   return bundled
+// };
+
+// // format the result according to result type
+// const resultFormat = arr => {
+//   let result = [];
+//   arr.forEach(inner => {
+//   if(inner.length !== 0) {
+//     result.push(inner);
+//   }
+//   })
+//   if(result.length === 1) {
+//     return result.flat()
+//   } else {
+//     return result
+//   }
+// }
+
+// const cleanRoom = arr => {
+//   const separated = separateNumberNString(arr);
+//   const sorted = sortArrays(separated);
+//   const flattened = sorted.flat();
+//   const bundled = bundle(flattened);
+//   const reseparted = separateNumberNString(bundled);
+//   const result = resultFormat(reseparted);
+//   return result
+// }
+
+// console.log(cleanRoom(array));
+// console.log(cleanRoom(bonusArray));
+
+// Question 2: Write a javascript function that takes an array of numbers and a target number. 
+// The function should find two different numbers in the array that, when added together, give the target number. 
+// For example: answer([1,2,3], 4)should return [1,3]
+
+// const answer = (arr, target) => {
+//   for(let i = 0; i < arr.length; i++){
+//     const num = arr[i]
+//     for (let j = 1; j < arr.length-i; j++) {
+//       const num2 = arr[i+j];
+//       const sum = num + num2;
+//       if (sum === target) {
+//         return [num, num2]
+//       };
+//     };
+//   };
+//   return "no match"
+// }
+
+// const array = [1,2,3];
+// const array2 = [1,2,3,4];
+// // return does NOT stop forEach loop
+// console.log(answer(array2, 6))
+
